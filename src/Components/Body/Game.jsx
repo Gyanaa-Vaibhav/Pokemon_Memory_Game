@@ -15,19 +15,19 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
     shuffle() // Shuffles Cards
     
     function handelGame(arr, x) {
-    
-        if (score == 8) {
+        if (score == 7) {
             setPlayBackgroundMusic(false)
             pauseBackground()
             setIsFlipped(prev => !prev)
             setGameEnd(true)
         }
-
+        
         if (arr.current.includes(x[0])) {
             setGameEnd(true)
             setPlayBackgroundMusic(false)
             pauseBackground()
         } else {
+            
             setScore(prev => prev + 1)
             setIsFlipped(prev => !prev)
             useSound('click')
