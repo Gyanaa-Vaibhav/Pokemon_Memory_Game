@@ -1,0 +1,31 @@
+*{
+    font-family: "pokemon", sans-serif;
+}
+@font-face {
+    font-family: pokemon;
+    src:url(../src/assets/font/pokemon.woff2)
+}
+
+body{
+    background: url(/pokemon-bg.9a5d7c260a137ab099b1.png) no-repeat 50% fixed;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+body,h1,h2,h3,h4,h5,p{
+    margin: 0;
+}
+
+.music{
+    display: block;
+    width: 36px;
+    height: 36px;
+    position: sticky;
+    top: 0;
+}
+
+
+
+
