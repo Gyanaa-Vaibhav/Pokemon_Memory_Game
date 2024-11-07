@@ -40,7 +40,7 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
     }, 500)
 
     const style1 = {
-        backgroundImage: (!isFlipped && !gameEnd) ? "none" : 'url(/card-back.png)',
+        backgroundImage: (!isFlipped && !gameEnd) ? "none" : 'url(public/card-back.png)',
         transform: (isFlipped && !gameEnd) ? "rotateY(180deg)" : "rotateY(0deg)",
     }
     let style2 = {

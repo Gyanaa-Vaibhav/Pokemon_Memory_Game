@@ -26,7 +26,7 @@ export default function EndScreen({ score }) {
                 },800)
             }}>Play Again</button>
             <a href="https://github.com/Gyanaa-Vaibhav/Pokemon_Memory_Game" target="_blank">
-            <img src="/github-mark.png" alt="Github Logo" />Source Code
+            <img src="public/github-mark.png" alt="Github Logo" />Source Code
             </a>
         </div>
     )

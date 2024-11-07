@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer>
             <a href="https://github.com/Gyanaa-Vaibhav" target="_blank">
-                <img src="/github-mark.png" alt="Github Logo" />Gyanaa Vaibhav
+                <img src="public/github-mark.png" alt="Github Logo" />Gyanaa Vaibhav
             </a>
             <p>{year}®</p>
         </footer>
