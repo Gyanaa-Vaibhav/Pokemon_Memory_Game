@@ -3,6 +3,7 @@ import useSound, { pauseBackground } from '../../Hooks/useSound'
 import './Game.css'
 import useShuffle from "../../Hooks/useShuffle";
 import EndScreen from "./EndScreen";
+import cardBack from '/card-back.png'
 
 
 export default function Game({ data,  setPlayBackgroundMusic }) {    
@@ -40,7 +41,7 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
     }, 500)
 
     const style1 = {
-        backgroundImage: (!isFlipped && !gameEnd) ? "none" : 'url(public/card-back.png)',
+        backgroundImage: (!isFlipped && !gameEnd) ? "none" : `url(${cardBack})`,
         transform: (isFlipped && !gameEnd) ? "rotateY(180deg)" : "rotateY(0deg)",
     }
     let style2 = {

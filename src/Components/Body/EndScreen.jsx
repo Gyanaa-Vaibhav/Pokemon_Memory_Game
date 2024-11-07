@@ -2,6 +2,7 @@
 import React from "react";
 import useSound from "../../Hooks/useSound";
 import './EndScreen.css'
+import githubMark from '/github-mark.png'
 
 export default function EndScreen({ score }) {
 
@@ -26,7 +27,7 @@ export default function EndScreen({ score }) {
                 },800)
             }}>Play Again</button>
             <a href="https://github.com/Gyanaa-Vaibhav/Pokemon_Memory_Game" target="_blank">
-            <img src="public/github-mark.png" alt="Github Logo" />Source Code
+                <img src={githubMark} alt="Github Logo" />Source Code
             </a>
         </div>
     )
