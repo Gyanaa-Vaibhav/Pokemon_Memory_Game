@@ -52,7 +52,13 @@
 
 .endScreen img{
     width: 24px;
+    border-radius: 1em;
     margin-right: 0.5em;
+}
+
+.endScreen .endImg{
+    margin: 1em 0;
+    width: 300px;
 }
 
 @media screen and (max-width:500px) {
@@ -65,5 +71,8 @@
 }
 .endScreen h1{
     font-size: 1rem;
+}
+.endScreen .endImg{
+    width: 220px;
 }
 }

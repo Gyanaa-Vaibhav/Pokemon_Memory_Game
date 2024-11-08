@@ -1,8 +1,8 @@
-
 import React from "react";
 import useSound from "../../Hooks/useSound";
-import './EndScreen.css'
 import githubMark from '/github-mark.png'
+import winImg from '/winImg.jpg'
+import './EndScreen.css'
 
 export default function EndScreen({ score }) {
 
@@ -10,10 +10,19 @@ export default function EndScreen({ score }) {
 
     if (score < 8) {
         useSound('lose')
-            decision =  < h3 >Your Score was { score }</h3 >
+        decision = (
+            <div>
+                <img className="endImg" src='https://c.tenor.com/2cVmIkey2V8AAAAd/tenor.gif' alt="Ash and Pikachu giving thumps up" />
+                < h3 >Your Score was {score}</h3 >
+            </div>
+        )
     } else if (score == 8) {
         useSound('win')
-        decision = <h3>Congrats You won</h3>
+        decision = (
+            <div>
+                <img className="endImg" src='https://c.tenor.com/YG5iG2YngKIAAAAd/tenor.gif' alt="Ash and Pikachu giving thumps up" />
+                <h3>Congrats You won</h3>
+            </div>)
     }
 
     return (
