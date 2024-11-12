@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import PropTypes from 'prop-types';
 import useSound, { pauseBackground } from '../../Hooks/useSound'
 import './Game.css'
 import useShuffle from "../../Hooks/useShuffle";
@@ -7,23 +8,23 @@ import cardBack from '/card-back.png'
 
 
 export default function Game({ data,  setPlayBackgroundMusic }) {    
-    const clickedPokemon = useRef(new Array)
+    const clickedPokemon = useRef([])
     const [shuffle, pokCard] = useShuffle(data)
     const [score, setScore] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false)
     const [gameEnd, setGameEnd] = useState(false)
 
-    shuffle() // Shuffles Cards
-    
-    function handelGame(arr, x) {
-        if (score == 7) {
+
+
+    function handelGame(arr, Pokemon) {
+        if (score === 7) {
             setPlayBackgroundMusic(false)
             pauseBackground()
             setIsFlipped(prev => !prev)
             setGameEnd(true)
         }
         
-        if (arr.current.includes(x[0])) {
+        if (arr.current.includes(Pokemon[0])) {
             setGameEnd(true)
             setPlayBackgroundMusic(false)
             pauseBackground()
@@ -32,7 +33,7 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
             setScore(prev => prev + 1)
             setIsFlipped(prev => !prev)
             useSound('click')
-            arr.current.push(x[0])
+            arr.current.push(Pokemon[0])
         }
     }
 
@@ -54,6 +55,8 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
         }
     }
 
+    shuffle() // Shuffles Cards
+
     const shuffledCards = pokCard.map(pokemon => {
         return (
             <div
@@ -65,7 +68,7 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
                 }}
             >
                 <div className="card" style={style2}>
-                    <img className="pokemon_img" src={pokemon[1]} />
+                    <img alt={pokemon[0]} className="pokemon_img" src={pokemon[1]} />
                     <h1>{pokemon[0]}</h1>
                 </div>
             </div>
@@ -74,13 +77,26 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
 
 
     return (
-        <>
-            {/* <EndScreen/> */}
+        <main>
             {gameEnd && <EndScreen score={score}/>}
             <div key={score} className="score"><h1>Score {score}</h1></div>
             <div key={'card'} id="card">
                 {shuffledCards}
             </div>
-        </>
+        </main>
     )
 }
+
+Game.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        sprites: PropTypes.shape({
+            other: PropTypes.shape({
+                'official-artwork': PropTypes.shape({
+                    front_default: PropTypes.string.isRequired
+                }).isRequired
+            }).isRequired
+        }).isRequired
+    })).isRequired,
+    setPlayBackgroundMusic: PropTypes.func.isRequired
+};

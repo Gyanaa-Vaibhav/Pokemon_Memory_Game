@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import useSound from "../../Hooks/useSound";
 import githubMark from '/github-mark.png'
 import winImg from '/winImg.jpg'
@@ -17,7 +18,7 @@ export default function EndScreen({ score }) {
                 < h3 >Your Score was {score}</h3 >
             </div>
         )
-    } else if (score == 8) {
+    } else if (score === 8) {
         useSound('win')
         decision = (
             <div>
@@ -36,9 +37,13 @@ export default function EndScreen({ score }) {
                     location.reload()
                 },800)
             }}>Play Again</button>
-            <a href="https://github.com/Gyanaa-Vaibhav/Pokemon_Memory_Game" target="_blank">
+            <a href="https://github.com/Gyanaa-Vaibhav/Pokemon_Memory_Game" target="_blank" rel="noreferrer">
                 <img src={githubMark} alt="Github Logo" />Source Code
             </a>
         </div>
     )
+}
+
+EndScreen.propTypes = {
+    score: PropTypes.number
 }

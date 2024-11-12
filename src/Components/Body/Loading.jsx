@@ -1,9 +1,10 @@
 // Done
-import { useState } from 'react'
+import React, { useState } from 'react'
+import PropTypes from "prop-types";
 import useSound from '../../Hooks/useSound'
 import './Loading.css'
 
-export default function Loading({ isPlaying, setPlayBackgroundMusic,setIsPlaying }) {
+export default function Loading({ setPlayBackgroundMusic,setIsPlaying }) {
 
     const [change, setChange] = useState(false)
     const loading_style = { top: change && "2.5%" }
@@ -33,4 +34,10 @@ export default function Loading({ isPlaying, setPlayBackgroundMusic,setIsPlaying
                 }} id='play-game'>Play Game</button>
         </div>
     )
+}
+
+Loading.propTypes = {
+    isPlaying: PropTypes.bool,
+    setPlayBackgroundMusic: PropTypes.func,
+    setIsPlaying: PropTypes.func
 }
