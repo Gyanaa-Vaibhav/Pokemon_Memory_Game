@@ -79,6 +79,7 @@ export default function Game({ data,  setPlayBackgroundMusic }) {
     return (
         <main>
             {gameEnd && <EndScreen score={score}/>}
+            <img className="cardloading" src={cardBack} alt="cardback" ></img>
             <div key={score} className="score"><h1>Score {score}</h1></div>
             <div key={'card'} id="card">
                 {shuffledCards}

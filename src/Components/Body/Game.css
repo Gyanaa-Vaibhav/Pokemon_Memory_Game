@@ -1,3 +1,9 @@
+.cardloading{
+  position: absolute;
+  visibility: hidden;
+  transform: translateY(-500px);
+}
+
 #card {
   display: flex;
   gap: 20px;
