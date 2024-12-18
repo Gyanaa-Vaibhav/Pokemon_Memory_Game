@@ -1,0 +1,170 @@
+.main-screen{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 50px);
+    padding: 0 100px;
+    align-items: center;
+}
+
+.welcome{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome h1{
+    font-size: 40px;
+    color: #FFCB05;
+    text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.30);
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4px;
+}
+
+.welcome p{
+    margin-top: 40px;
+    color: #FFCB05;
+    text-shadow: -3px 3px 2px rgba(0, 0, 0, 0.30);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2.4px;
+}
+
+.pikachu-img{
+    width: 80px;
+    position: absolute;
+    left: 100px;
+    top: -90px;
+    animation: float 1.8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@font-face {
+    font-family: pokemon;
+    src:url(../../../src/assets/font/pokemon.woff2)
+}
+
+
+.rules{
+    display: flex;
+    padding: 30px 50px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.65);
+    color: #FFCB05;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 3px;
+    gap: 30px;
+}
+
+.rules h2{
+    text-shadow: -4px 4px 0 rgba(0, 0, 0, 0.30);
+}
+
+.rules-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+    color: #FFFFFF;
+    -webkit-text-stroke-width: 0;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "pokemon",sans-serif;
+    font-size: 16px;
+    line-height: 125%;
+}
+
+.start-game{
+    border: none;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    color:  #FFCB05;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    background: #2271B9;
+}
+
+.start-game:active{
+    transform: translateY(2px);
+}
+
+
+@media screen and (max-width: 800px) {
+    .main-screen {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 120px 80px;
+    }
+
+    .welcome h1{
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .welcome p{
+        font-size: 20px;
+        margin-top: 20px;
+        -webkit-text-stroke-width: 1.5px;
+        text-align: center;
+    }
+
+    .pikachu-img{
+        width: 60px;
+        left: 150px;
+        top: -65px;
+    }
+
+    .rules h2{
+        align-self: center;
+        font-size: 30px;
+        -webkit-text-stroke-width: 1.5px;
+    }
+    .rules p{
+        font-size: 14px;
+        align-self: center;
+        text-align: center;
+    }
+
+    .start-game{
+        align-self: center;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}

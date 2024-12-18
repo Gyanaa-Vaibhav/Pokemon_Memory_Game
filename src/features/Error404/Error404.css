@@ -1,0 +1,84 @@
+/* Error 404 Page Styling */
+
+.error-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #FFCB05;
+    padding: 40px;
+    border-radius: 20px;
+    border: 5px solid #3568B4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: "Pokemon Solid", sans-serif;
+    width: 90%;
+    max-width: 500px;
+}
+
+.error-image {
+    width: 150px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.error-container h1 {
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3568B4;
+}
+
+.error-container p {
+    font-size: 24px;
+    margin: 20px 0;
+    font-family: "Academy Engraved LET", sans-serif;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: #FFCB05;
+    background-color: #3568B4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Pokemon Solid", sans-serif;
+    letter-spacing: 2px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #4883e3;
+    transform: scale(1.1);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+    .error-container {
+        padding: 20px;
+    }
+
+    .error-image {
+        width: 100px;
+    }
+
+    .error-container h1 {
+        font-size: 2rem;
+    }
+
+    .error-container p {
+        font-size: 1rem;
+    }
+
+    .home-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,51 @@
+.cube-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 50px auto;
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+.cube.flip {
+    transform: rotateY(180deg);
+}
+
+.cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.cube-face.front {
+    max-width: 180px;
+    height: 250px;
+    background-color: #FFFFFF60;
+    border-radius: 15px;
+    transform: translateZ(10px);
+    display: flex;
+    align-items: center;
+}
+
+.cube-face.back {
+    max-width: 180px;
+    height: 250px;
+    border-radius: 15px;
+    transform: rotateY(180deg) translateZ(10px);
+    background: url('/card-back.png') center/contain no-repeat;
+}
+
+.cube-face.left {
+    display:none;
+    border-radius: 15px;
+    width: 5px;
+    height: 250px;
+    background: #192653;
+    transform-origin: left;
+}

@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    src: url(./font/Pokemon_Solid.woff2);
+}
+
+.nav-bar{
+    display: flex;
+    height: 50px;
+    padding: 0 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF40;
+}
+
+.nav-items{
+    display: flex;
+    height: 50px;
+    padding: 0 40px;
+    align-items: center;
+    gap: 20px;
+}
+
+li{
+    list-style: none;
+}
+
+.nav-items a, .nav-items p{
+    color: #FFCB05;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    cursor: pointer;
+}
+
+.levels, .level-items a, .difficulty, .difficulty-items a{
+    color: #FFCB05;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    z-index: 10;
+    text-decoration: none;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #3568B4;
+    font-family: "Pokemon Solid",sans-serif;
+    cursor: pointer;
+}
+
+.level-items, .difficulty-items{
+    flex-direction: column;
+    background-color: #D9D9D940;
+    gap: 5px;
+    min-width: fit-content;
+    white-space: nowrap;
+    padding: 10px 5px 0;
+    position: absolute;
+}
+
+.level-items a, .difficulty-items a{
+    padding: 5px 0;
+}
+
+.levels:hover, .level-items a:hover, .difficulty:hover, .difficulty-items a:hover{
+    font-size: 22px;
+}
+
+.levels, .difficulty{
+    position: relative;
+}
+
+.music-icon{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-bar{
+        padding: 0 40px;
+    }
+
+    .nav-items{
+        padding: 0 20px;
+    }
+
+    .levels, .level-items a, .difficulty, .difficulty-items a, .nav-items a, .nav-items p{
+        font-size: 16px;
+        -webkit-text-stroke-width: 1.2px;
+        z-index: 10;
+    }
+
+    .levels:hover, .level-items a:hover, .difficulty:hover, .difficulty-items a:hover{
+        font-size: 20px;
+    }
+
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Text</title>
+    <style>
+        @font-face {
+            font-family: "PokemonFont";
+            src: url("path-to-pokemon-font.ttf") format("truetype");
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .pokemon-text {
+            font-family: "PokemonFont", sans-serif;
+            font-size: 4rem;
+            font-weight: bold;
+            color: yellow;
+            text-shadow:
+                    -1px -1px 0 blue,  /* Top-left border */
+                    1px -1px 0 blue,   /* Top-right border */
+                    -1px 1px 0 blue,   /* Bottom-left border */
+                    1px 1px 0 blue;    /* Bottom-right border */
+        }
+    </style>
+</head>
+<body>
+<div class="pokemon-text">Pokémon Style!</div>
+</body>
+</html>

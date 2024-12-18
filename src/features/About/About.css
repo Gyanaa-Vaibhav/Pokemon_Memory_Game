@@ -1,0 +1,143 @@
+/* About Game Page Styling */
+.about-game-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    border: 3px solid #3568B4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Pokemon Solid", sans-serif;
+    color: #3568B4;
+}
+
+.about-game-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFCB05;
+    -webkit-text-stroke-width: 1.5px;
+    letter-spacing: 3px;
+    -webkit-text-stroke-color: #3568B4;
+}
+
+.about-game-container h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #FFCB05;
+    -webkit-text-stroke-width: 1px;
+    letter-spacing: 3px;
+    -webkit-text-stroke-color: #3568B4;
+}
+
+.about-game-container p {
+    color: #FFFFFF;
+    font-family: "Academy Engraved LET", sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.about-game-container ul, .about-game-container ol {
+    color: #FFFFFF;
+    text-align: left;
+    margin: 19px;
+    font-family: "Academy Engraved LET", sans-serif;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.about-game-container ul li, .about-game-container ol li {
+    margin-bottom: 10px;
+}
+
+.encouragement {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #3568B4;
+    font-weight: bold;
+}
+
+
+/* GitHub and Website Visit Component Styling */
+.visit-container {
+    text-align: center;
+    margin: 10px auto 30px;
+    padding: 20px;
+    color: #FFCB05;
+    font-family: "Pokemon Solid", sans-serif;
+}
+
+.visit-message {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.visit-link {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #FFCB05;
+    background-color: #3568B4;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 3px;
+}
+
+.visit-link:hover {
+    background-color: #4789ea;
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 800px) {
+    .visit-container {
+        margin: 10px auto 20px;
+        padding: 15px;
+    }
+    .about-game-container h1 {
+        font-size: 28px;
+    }
+    .about-game-container p{
+        font-size: 16px;
+    }
+    .about-game-container h2{
+        font-size: 24px;
+    }
+    .about-game-container li{
+        font-size: 16px;
+    }
+
+    .visit-message {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    .visit-link {
+        font-size: 16px;
+        padding: 12px 25px;
+        letter-spacing: 2px;
+    }
+
+    .visit-link:hover {
+        transform: scale(1.05); /* Slightly reduce hover scaling for smaller screens */
+    }
+}
