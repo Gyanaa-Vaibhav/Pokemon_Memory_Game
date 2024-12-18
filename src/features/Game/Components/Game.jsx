@@ -115,7 +115,8 @@ export default function Game(){
             setShowNextLevel(true);
         }
         if(score.length === 50 && level === '5') {
-            setShowNextLevel(true);
+            useSound('win');
+            window.location.href = '/game-win';
         }
 
     }, [score]);

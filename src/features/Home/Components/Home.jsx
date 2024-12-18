@@ -7,6 +7,8 @@ import {Link} from "react-router";
 export default function Home() {
     const playingSound = useRef(false)
     const {level,difficulty} = useContext(AppContext)
+    localStorage.setItem('score', JSON.stringify([]));
+
 
     return(
         <div className="main-screen">

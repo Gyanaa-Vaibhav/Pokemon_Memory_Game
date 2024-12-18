@@ -1,6 +1,6 @@
 @font-face {
     font-family: pokemon;
-    src:url(../public/font/pokemon.woff2)
+    src:url(/font/pokemon.woff2)
 }
 
 body{
