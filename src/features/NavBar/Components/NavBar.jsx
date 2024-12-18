@@ -24,7 +24,7 @@ export default function NavBar(){
 
     return(
         <div className="nav-bar">
-            <Link to={'/home'} >
+            <Link to={'/home'}>
                 <img
                     src={Pokemon_Logo}
                     alt="Pokemon Logo"
@@ -89,13 +89,33 @@ export default function NavBar(){
                     className='music-icon'
                 >
                     {playBackgroundMusic ?
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
-                            <path d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/></svg>
-                        : <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
-                            <path d="M792-56 56-792l56-56 736 736-56 56ZM560-514l-80-80v-246h240v160H560v166ZM400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-62l80 80v120q0 66-47 113t-113 47Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                             fill="#000000">
+                            <path
+                                d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/>
+                        </svg>
+                        : <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                               fill="#000000">
+                            <path
+                                d="M792-56 56-792l56-56 736 736-56 56ZM560-514l-80-80v-246h240v160H560v166ZM400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-62l80 80v120q0 66-47 113t-113 47Z"/>
+                        </svg>
                     }
 
       </span>
+            </div>
+            <div className="device-overlay">
+                <div className="device-not-supported-container">
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/104.png"
+                        alt="Sad Cubone"
+                        className="device-image"
+                    />
+                    <h1>Device Not Supported</h1>
+                    <p>
+                        Oh no! It looks like your device is not supported. Cubone is feeling lonely too.
+                        Please try using a larger screen for the best experience.
+                    </p>
+                </div>
             </div>
         </div>
     )

@@ -35,12 +35,12 @@ function reducer(state, action) {
         case '4':
             return {
                 cards: 12 + modifier,
-                gridStyle: { gridTemplateColumns: 'repeat(4, 1fr)' },
+                gridStyle: { gridTemplateColumns: 'repeat(5, 1fr)' },
             };
         case '5':
             return {
                 cards: 15 + modifier,
-                gridStyle: { gridTemplateColumns: 'repeat(4, 1fr)' },
+                gridStyle: { gridTemplateColumns: 'repeat(5, 1fr)' },
             };
         default:
             return state;
@@ -67,11 +67,15 @@ export default function Game(){
     useEffect(() => {
         const localScore = JSON.parse(localStorage.getItem('score'));
         const levelJump = JSON.parse(localStorage.getItem('levelJump'));
-        if(localScore.length === 0) localStorage.setItem('levelJump', JSON.stringify(true));
-        if(levelJump){
-            setScore([]);
-            localStorage.setItem('score', JSON.stringify([]));
-            localStorage.setItem('levelJump', JSON.stringify(false));
+        if(localScore){
+
+            if(localScore.length === 0) localStorage.setItem('levelJump', JSON.stringify(true));
+            if(levelJump){
+                setScore([]);
+                localStorage.setItem('score', JSON.stringify([]));
+                localStorage.setItem('levelJump', JSON.stringify(false));
+            }
+
         }
         setScore(prev => [...localScore]);
     },[level]);
@@ -158,7 +162,7 @@ export default function Game(){
 
 
     return (
-        <>
+        <div className="main-game-screen">
             <div>
                 <div className='game-desc-container'>
                     <p className='game-desc'>Level:{level}</p>
@@ -194,6 +198,6 @@ export default function Game(){
                     <Card key={index} image={p.image} id={p.name} name={p.name} handleFlip={handleFlip}/>
                 ))}
             </div>
-        </>
+        </div>
     )
 }

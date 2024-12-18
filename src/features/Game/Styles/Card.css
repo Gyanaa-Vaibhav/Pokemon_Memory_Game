@@ -49,3 +49,25 @@
     background: #192653;
     transform-origin: left;
 }
+
+@media screen and (max-width: 1008px) {
+    .cube-container {
+        grid-template-columns: repeat(2, 150px);
+        width: 115px;
+        gap: 20px;
+        height: 150px;
+        perspective: 1000px;
+        margin: 20px auto;
+    }
+
+    .cube{
+        width: 115px;
+        height: 150px;
+    }
+
+    .cube-face.front,.cube-face.back,.cube-face.bottom, .cube-face.top, .cube-face.right {
+        width: 115px;
+        height: 150px;
+    }
+
+}

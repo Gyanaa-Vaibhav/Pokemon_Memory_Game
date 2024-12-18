@@ -78,13 +78,6 @@
     transform: scale(1.1);
 }
 
-@media screen and (max-width: 600px) {
-    .next-level-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-
 .game-wrapper {
     position: relative;
 }
@@ -99,4 +92,16 @@
     background-color: rgba(0, 0, 0, 0.3);
     pointer-events: all;
 }
+
+@media screen and (max-width: 600px) {
+    .next-level-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .main-game-screen{
+        display: none;
+    }
+}
+
 

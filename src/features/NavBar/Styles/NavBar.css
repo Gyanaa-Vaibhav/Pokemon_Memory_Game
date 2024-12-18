@@ -104,3 +104,123 @@ li{
     }
 
 }
+
+
+/*
+OverLay
+*/
+
+/* Overlay Styling */
+.device-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
+    z-index: 9999; /* Ensure it appears on top of all other content */
+}
+
+/* Main Container Styling */
+.device-not-supported-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #FFCB05;
+    padding: 40px;
+    border-radius: 20px;
+    border: 5px solid #3568B4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: "Academy Engraved LET", sans-serif;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Image Styling */
+.device-image {
+    width: 150px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.device-not-supported-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.device-not-supported-container p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Query to Show Overlay for Small Screens */
+@media screen and (max-width: 600px) {
+    .nav-items{
+        display: none;
+    }
+
+    .nav-bar a{
+        display: none;
+    }
+
+    .device-overlay {
+        display: block;
+    }
+
+    .device-not-supported-container {
+        padding: 30px;
+        width: 75%;
+    }
+
+    .device-image {
+        width: 120px; /* Smaller image */
+    }
+
+    .device-not-supported-container h1 {
+        font-size: 26px; /* Smaller text */
+    }
+
+    .device-not-supported-container p {
+        font-size: 18px;
+    }
+}
+
+/* Media Query for Large Screens */
+@media screen and (max-width: 400px) {
+    .device-not-supported-container {
+        padding: 20px;
+        width: 75%;
+    }
+
+    .device-image {
+        width: 80px;
+    }
+
+    .device-not-supported-container h1 {
+        font-size: 20px;
+
+    }
+
+    .device-not-supported-container p {
+        font-size: 10px;
+    }
+}
+

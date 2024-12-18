@@ -141,3 +141,9 @@
         transform: scale(1.05); /* Slightly reduce hover scaling for smaller screens */
     }
 }
+
+@media screen and (max-width: 600px) {
+    .about-game-container{
+        display: none;
+    }
+}
