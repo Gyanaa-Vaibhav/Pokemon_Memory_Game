@@ -101,6 +101,7 @@ export default function Game(){
     useEffect(() => {
 
         if(level === '1') localStorage.setItem('score', JSON.stringify([]));
+        if(level >= '6' || difficulty >= '4') window.location.href = '/404'
 
         if(score.length === 5 && level === '1'){
             setShowNextLevel(true);
