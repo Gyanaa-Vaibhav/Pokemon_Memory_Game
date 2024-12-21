@@ -33,6 +33,7 @@
 }
 
 .info-container p {
+    font-family: pkmn, sans-serif;
     font-size: 16px;
     margin: 10px 0 20px;
     line-height: 1.8;
@@ -48,6 +49,7 @@
 }
 
 .info-container li {
+    font-family: pkmn, sans-serif;
     margin-bottom: 10px;
 }
 
