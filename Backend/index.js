@@ -3,10 +3,9 @@ import {graphqlHTTP} from "express-graphql";
 import * as path from "node:path";
 import url from "url";
 import dotenv from "dotenv";
-dotenv.config();
 import cors from "cors";
 import {schema,rootValue} from "./graphql.js";
-import log from "eslint-plugin-react/lib/util/log.js";
+dotenv.config();
 
 const app = express();
 const __filename = url.fileURLToPath(import.meta.url);

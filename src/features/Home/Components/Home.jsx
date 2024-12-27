@@ -10,6 +10,7 @@ export default function Home() {
     localStorage.setItem('score', JSON.stringify([]));
 
 
+
     return(
         <div className="main-screen">
             <div className="welcome">
