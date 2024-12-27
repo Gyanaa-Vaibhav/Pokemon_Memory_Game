@@ -61,7 +61,7 @@ export default function Game(){
     const prevLevel = useRef(1);
 
     const [state, dispatch] = useReducer(reducer, {level, difficulty});
-    const { loading, error, data, shuffleArray } = useFetch(state.cards);
+    const { loading, error, data, shuffleArray,fromGraph } = useFetch(state.cards);
     const {score,setScore} = useContext(AppContext);
 
     useEffect(() => {
@@ -93,10 +93,10 @@ export default function Game(){
 
 
     useEffect(() => {
-        if (data.length) {
-            setShuffledData(data);
+        if (fromGraph.getMultiplePokemon?.length) {
+            setShuffledData(fromGraph.getMultiplePokemon);
         }
-    }, [data]);
+    }, [fromGraph.getMultiplePokemon]);
 
     useEffect(() => {
 
