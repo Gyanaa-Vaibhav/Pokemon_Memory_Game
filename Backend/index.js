@@ -20,7 +20,7 @@ app.get('/api',(req,res)=> {
     res.json({message: "Welcome to Pokemon Memory"});
 })
 
-app.use('/graphql', graphqlHTTP({
+app.post('/graphql', graphqlHTTP({
     schema,
     rootValue,
     graphiql: true,

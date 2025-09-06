@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokemon
+  namespace: pokemon
+  labels:
+    app: pokemon
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pokemon
+
+  template:
+    metadata:
+      name: pokemon
+      labels:
+        app: pokemon
+
+    spec:
+      containers:
+        - name: host
+          image: registry.gyanaavaibhav.in/pokemon:v1
+          imagePullPolicy: Always
+
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pokemon
+  namespace: pokemon
+spec:
+  selector:
+    app: pokemon
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pokemon
+  namespace: pokemon
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+    nginx.ingress.kubernetes.io/proxy-real-ip-cidr: "0.0.0.0/0"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: pokemon.gyanaavaibhav.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pokemon
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - pokemon.gyanaavaibhav.in
+      secretName: pokemon-tls

@@ -94,9 +94,9 @@ export default function Game(){
 
     useEffect(() => {
         if (fromGraph.getMultiplePokemon?.length) {
-            setShuffledData(fromGraph.getMultiplePokemon);
+            setShuffledData(fromGraph?.getMultiplePokemon);
         }
-    }, [fromGraph.getMultiplePokemon]);
+    }, [fromGraph?.getMultiplePokemon]);
 
     useEffect(() => {
 

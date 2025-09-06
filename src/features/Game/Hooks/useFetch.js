@@ -51,7 +51,8 @@ export default function useFetch(numberOfPokemon){
 
         }
         try{
-            fetch('/graphql',{
+            // TODO Change back to /graphql ONLY
+            fetch('http://62.72.59.39:9003/graphql',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({query,variables})
